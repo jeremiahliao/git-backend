@@ -20,6 +20,11 @@ app.get("/", (req, res) => {
     console.log(req);
 });
 
+app.get("/updatePage/:userid", (req, res)=>{
+    const user = req.params.userid;
+    
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
