@@ -15,15 +15,16 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// API Routes
+
 app.get("/", (req, res) => {
     res.send("HopeKCC Git Test API");
-    console.log(req);
 });
 
-app.get("/updatePage/:userid", (req, res)=>{
-    const user = req.params.userid;
-    
-})
+// User Webpage API
+
+app.use("/webfetch", require("./routes/webfetch"));
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
