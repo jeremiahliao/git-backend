@@ -16,11 +16,14 @@ Upon registration to the LMS, students should provide a username that will be us
 A *.env* file should be used to store the github repository path and web server file path. **Note: ** Those file paths should exist outside of the project directory.
 
 ## API Routes
-### webfetch
 ---
+### webfetch
 **/updatePage/_userid_**
+
 **Parameters**
  - userid: unique student identifier used for the student's subdirectory and repo branch
+   
 **Output**
  - HTTP Code: 200 -> Success
  - HTTP Code: 500 -> Error, if error pops up when trying to pull from the repo
+---
