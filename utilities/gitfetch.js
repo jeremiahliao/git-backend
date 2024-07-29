@@ -45,7 +45,7 @@ async function switchBranch(user){
 
     try {
         // const {stdout, stderr} = await exec(`pwd`)
-        const {stdout, stderr} = await exec(`./scripts/fetchRepo.sh "${process.env.GIT_PATH}" ${user} "${process.env.WEB_PATH}"`)
+        const {stdout, stderr} = await exec(`./scripts/fetchRepo.sh "${process.env.GIT_PATH}" ${user} "${process.env.WEB_PATH}"`);
         console.log(`stdout: \n${stdout}`);
         if (stderr != "")
             console.error(`stderr: \n${stderr}`);
