@@ -17,8 +17,8 @@ A *.env* file should be used to store the github repository path and web server 
 
 ## API Routes
 ### webfetch
-==/updatePage/*userid*==
-
+**/updatePage/_userid_**
+---
 **Parameters**
  - userid: unique student identifier used for the student's subdirectory and repo branch
 **Output**
