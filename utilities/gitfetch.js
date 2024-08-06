@@ -11,20 +11,7 @@ const exec = util.promisify(require('node:child_process').exec);
 
 
 async function switchBranch(user){
-    // const child = exec(`./scripts/fetchRepo.sh "${process.env.GIT_PATH}" ${user} "${process.env.WEB_PATH}"`, (error, stdout, stderr) => {
-    //     if (error) {
-    //         console.error(`exec error: \n${error}`);
-    //         return;
-    //     }
-    //     console.log(`stdout: \n${stdout}`);
-    //     if (stderr != "")
-    //         console.error(`stderr: \n${stderr}`);
-    // });
-
-    // processListeners(child);
-
     try {
-        // const {stdout, stderr} = await exec(`pwd`)
         const {stdout, stderr} = await exec(`./scripts/fetchRepo.sh "${process.env.GIT_PATH}" ${user} "${process.env.WEB_PATH}"`);
         console.log(`stdout: \n${stdout}`);
         if (stderr != "")
