@@ -17,16 +17,19 @@ echo ""
 
 # run fetch operation
 
+user=$2
+
 git stash # stash local chaanges
-git checkout "$2" # switch to user branch
+git checkout "$user" # switch to user branch
 git pull  # get updates from remote
 
-echo "Branch succesfully updated for $2"
+echo "Branch succesfully updated for $user"
 
 
 # copy repo contents to the web directory
 
-destination=$3
+destination="$3/$user"
+mkdir -p "$destination"
 cp -r * "$destination"
 
 echo "Files copied to $destination"

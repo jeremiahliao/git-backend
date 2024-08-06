@@ -19,7 +19,7 @@ A *.env* file should be used to store the github repository path and web server 
 ---
 ### webfetch
 
-*/updatePage/:userid*
+*/webfetch/update/:userid*
 
 Switches to the user's git branch, pulls changes from the remote branch, and copies the contents of the repository into the user's subdirectory on the web server. 
 
@@ -29,4 +29,16 @@ Switches to the user's git branch, pulls changes from the remote branch, and cop
 **Output**
  - HTTP Code: 200 -> Success
  - HTTP Code: 500 -> Error, if error pops up when trying to pull from the repo
+---
+
+*/webfetch/reset/:userid*
+
+Removes user's web directory. This is to be used when the user no longer wishes to display their code on the Apache Web Server
+
+**Parameters**
+ - userid: unique student identifier used for the student's subdirectory and repo branch
+   
+**Output**
+ - HTTP Code: 200 -> Success
+ - HTTP Code: 500 -> Error, if error pops up when trying to remove the directory
 ---
