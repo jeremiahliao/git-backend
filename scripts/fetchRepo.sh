@@ -28,7 +28,7 @@ echo "Branch succesfully updated for $user"
 
 # copy repo contents to the web directory
 
-destination="$3/$user"
+destination="$3/$4/$user"
 mkdir -p "$destination"
 cp -r * "$destination"
 

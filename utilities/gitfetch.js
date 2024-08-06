@@ -10,9 +10,9 @@ const exec = util.promisify(require('node:child_process').exec);
 // console.log(`GIT_PATH: ${process.env.GIT_PATH}`);
 
 
-async function switchBranch(user){
+async function switchBranch(user, webpath){
     try {
-        const {stdout, stderr} = await exec(`./scripts/fetchRepo.sh "${process.env.GIT_PATH}" ${user} "${process.env.WEB_PATH}"`);
+        const {stdout, stderr} = await exec(`./scripts/fetchRepo.sh "${process.env.GIT_PATH}" ${user} "${process.env.WEB_PATH}" ${webpath}`);
         console.log(`stdout: \n${stdout}`);
         if (stderr != "")
             console.error(`stderr: \n${stderr}`);
@@ -22,9 +22,9 @@ async function switchBranch(user){
     }
 }
 
-async function resetBranch(user){
+async function resetBranch(user, webpath){
     try {
-        const {stdout, stderr} = await exec(`./scripts/resetRepo.sh "${process.env.WEB_PATH}" ${user}`);
+        const {stdout, stderr} = await exec(`./scripts/resetRepo.sh "${process.env.WEB_PATH}" ${webpath} ${user}`);
         console.log(`stdout: \n${stdout}`);
         if (stderr != "")
             console.error(`stderr: \n${stderr}`);

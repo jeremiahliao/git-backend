@@ -6,7 +6,7 @@ origin=$PWD
 echo "Current Working Directory: $origin"
 
 # concatenate user directory to webpath
-webpath="${1}"
+webpath="$1/$2"
 
 echo "Change directory to $webpath"
 cd "$webpath"
@@ -17,9 +17,9 @@ echo ""
 
 # remove target directory
 
-rm -r $2
+rm -r $3
 
-echo "Sucessfully removed directory: $2"
+echo "Sucessfully removed directory: $3"
 
 # return to original directory
 cd "$origin"
